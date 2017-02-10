@@ -1,1 +1,3 @@
-JNI_C_Singleton
+#JNI C Singleton#
+
+A C++ Singleton example at JNI.
