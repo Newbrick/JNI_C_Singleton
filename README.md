@@ -1,0 +1,1 @@
+JNI_C_Singleton
