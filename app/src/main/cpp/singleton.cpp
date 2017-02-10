@@ -4,10 +4,15 @@
 
 #include "singleton.h"
 
+singleton::singleton () {
+    instance = NULL;
+    text = "";
+}
 
-singleton * singleton::getInstance() {
+singleton * singleton::getInstance () {
     if (!instance){
         instance = new singleton;
+        singleton::instance->text = "initialited";
     }
     return instance;
 }

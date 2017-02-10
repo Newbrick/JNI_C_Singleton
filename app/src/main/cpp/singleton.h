@@ -10,20 +10,13 @@
 
 class singleton {
     static singleton * instance;
+    std::string text;
 
-    singleton(){
-        text = "initialized";
-    }
-    public:
-        static singleton *  getInstance();
-
-        void setText(std::string text);
-        std::string getText();
-
-    private:
-
-         std::string text;
-
+public:
+    singleton ();
+    static singleton *  getInstance();
+    void setText(std::string text);
+    std::string getText();
 };
 
 

@@ -8,7 +8,6 @@ extern "C" jstring Java_com_example_matas_singletoninc_MainActivity_stringFromJN
         JNIEnv *env,
         jobject /* this */) {
 
-
     singleton::getInstance()->setText("Hello from C++ Singleton");
     std::string hello = singleton::getInstance()->getText();
 
