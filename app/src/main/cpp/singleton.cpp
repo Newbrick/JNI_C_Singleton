@@ -4,24 +4,54 @@
 
 #include "singleton.h"
 
+/**
+ * Singleton instance
+ */
+singleton * singleton::instance = nullptr;
+
+/**
+ * Default constructor
+ */
 singleton::singleton () {
-    instance = NULL;
-    text = "";
+    // do anything here
+    text = "initialited by default constructor";
 }
 
+/**
+ * Destructor
+ */
+singleton::~singleton() {
+    // free all resources allocated by static instance pointer
+}
+
+/**
+ * Access singleton instance
+ */
 singleton * singleton::getInstance () {
-    if (!instance){
-        instance = new singleton;
-        singleton::instance->text = "initialited";
+    // in C++11 use nullptr instead NULL
+    if (singleton::instance == nullptr) {
+        singleton::instance = new singleton;
     }
-    return instance;
+    return singleton::instance;
 }
 
-void singleton::setText(std::string number) {
-    singleton::text = number;
+/**
+ * Extern singleton instance destructor
+ */
+void singleton::deleteInstance() {
+    // in C++1 use nullptr instead NULL
+    if (singleton::instance != nullptr){
+        delete singleton::instance;
+        singleton::instance = nullptr;
+    }
+}
+
+
+void singleton::setText(std::string text) {
+    this->text = text;
 }
 
 std::string singleton::getText()  {
-    return singleton::text;
+    return text;
 }
 
